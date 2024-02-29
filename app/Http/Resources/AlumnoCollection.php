@@ -16,4 +16,13 @@ class AlumnoCollection extends ResourceCollection
     {
         return parent::toArray($request);
     }
+
+    public function with(Request $request)
+    {
+        return[
+            "jsonapi" => [
+                "version"=>"1.0"
+            ]
+        ];
+    }
 }

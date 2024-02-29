@@ -14,6 +14,15 @@ class AlumnoResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return[
+            "id"=>$this->id,
+            "type" => "Alumno",
+            "attributes" => [
+                "nombre"=>$this->nombre,
+                "direccion"=>$this->direccion,
+                "email"=>$this->email,
+            ],
+            "link"=>url('api/alumnos'.$this->id)
+        ];
     }
 }
